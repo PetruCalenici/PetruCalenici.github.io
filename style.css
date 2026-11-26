@@ -125,29 +125,19 @@ h1, h2, h3 {
   background: #f2f0ed;
 }
 
-.hero-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 24px 64px;
-  margin-top: 48px;
-}
-
 .intro {
-  margin: 0;
+  margin: 32px 0 0;       /* gap between name and bio */
   max-width: 620px;
   font-size: 22px;
   line-height: 1.5;
 }
 
 .links {
-  margin: 0;
+  margin: 20px 0 0;       /* gap between bio and links */
   display: flex;
   gap: 20px;
   font-size: 15px;
 }
-
 
 /* ==========================================================
    5. RESEARCH LIST
