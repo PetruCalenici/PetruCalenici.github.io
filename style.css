@@ -257,3 +257,39 @@ h1, h2, h3 {
   .intro { font-size: 19px; }
   .footer-email { font-size: 24px; }
 }
+
+/* ==========================================================
+   8. INNER PAGES (research.html, teaching.html, …)
+   ========================================================== */
+.page-header {
+  padding: 64px 0 24px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.page-title {
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Collapsible abstract */
+.abstract { margin-top: 10px; }
+
+.abstract summary {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.paper-body .abstract p { margin-top: 8px; }
+
+/* Row of links under a paper: PDF, SSRN, Slides */
+.paper-body .paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 15px;
+}
