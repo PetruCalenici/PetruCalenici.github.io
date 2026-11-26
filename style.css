@@ -1,9 +1,259 @@
+/* ==========================================================
+   1. COLOURS AND FONTS
+   These are CSS variables: define a value once here, then use
+   it anywhere with var(--name). Change --accent and the whole
+   site changes colour.
+   ========================================================== */
+:root {
+  --ink: #111111;      /* main text */
+  --muted: #555555;    /* secondary text */
+  --rule: #dddddd;     /* thin divider lines */
+  --accent: #c2410c;   /* the orange */
+  --accent-dark: #9a3412;
+  --heading-font: 'Space Grotesk', sans-serif;
+  --body-font: 'Inter', system-ui, sans-serif;
+}
+
+
+/* ==========================================================
+   2. BASICS
+   ========================================================== */
 body {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 0 20px;
-  font-family: Georgia, serif;
+  margin: 0;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: var(--body-font);
+  font-size: 17px;
   line-height: 1.6;
 }
-img { width: 150px; border-radius: 50%; }
-h2 { border-bottom: 1px solid #ddd; }
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--heading-font);
+}
+
+/* The centred column that holds the whole page */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;           /* "auto" left and right = centred */
+  padding: 32px 40px 64px;  /* top, left/right, bottom */
+}
+
+
+/* ==========================================================
+   3. NAVIGATION
+   ========================================================== */
+.site-nav {
+  display: flex;                   /* put children in a row */
+  flex-wrap: wrap;                 /* let them drop to a new line on small screens */
+  justify-content: space-between;  /* name on the left, links on the right */
+  align-items: center;
+  gap: 12px 32px;                  /* space between rows, then between items */
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-nav a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-name { font-weight: 600; }
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.nav-links a { padding: 12px 0; }  /* a bigger area to click or tap */
+
+/* Only the link with aria-current="page" gets the orange underline */
+.nav-links a[aria-current="page"] {
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+}
+
+
+/* ==========================================================
+   4. HERO (name, photo, intro)
+   ========================================================== */
+.hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.hero-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;   /* name and photo line up along the bottom */
+  gap: 40px;
+}
+
+/* flex: grow shrink starting-width. This block starts at 420px
+   and grows to fill the space the photo doesn't use. */
+.hero-text { flex: 1 1 420px; }
+
+.eyebrow {
+  margin: 0 0 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.name {
+  /* clamp(minimum, preferred, maximum): 8vw = 8% of the screen
+     width, so the name grows with the screen but stays between
+     56px and 108px. */
+  font-size: clamp(56px, 8vw, 108px);
+  line-height: 0.95;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.photo {
+  width: 200px;
+  height: 240px;
+  object-fit: cover;      /* crop the photo to fill the box without stretching it */
+  background: #f2f0ed;    /* grey box until the photo loads */
+}
+
+.hero-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px 64px;
+  margin-top: 48px;
+}
+
+.intro {
+  margin: 0;
+  max-width: 620px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.links {
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+}
+
+
+/* ==========================================================
+   5. RESEARCH LIST
+   ========================================================== */
+.research { padding-top: 56px; }
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.section-head h2 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.section-head a { font-size: 15px; }
+
+/* Each paper is a row: number | title + summary | status */
+.paper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 40px;
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+}
+
+/* Add a bottom line under the last paper only */
+.paper:last-of-type { border-bottom: 1px solid var(--rule); }
+
+.paper-num {
+  flex: 0 0 56px;          /* fixed 56px wide: never grows or shrinks */
+  font-family: var(--heading-font);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.paper-body {
+  flex: 1 1 480px;         /* takes up whatever space is left */
+  min-width: 0;
+}
+
+.paper-body h3 {
+  margin-bottom: 6px;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.paper-body p {
+  margin: 0;
+  color: #444444;
+}
+
+.paper-meta {
+  flex: 0 0 200px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
+/* ==========================================================
+   6. FOOTER
+   ========================================================== */
+.site-footer {
+  margin-top: 72px;
+  padding-top: 40px;
+  border-top: 1px solid var(--ink);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.footer-email {
+  font-family: var(--heading-font);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;  /* a long address can break onto two lines on phones */
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
+/* ==========================================================
+   7. SMALL SCREENS
+   A media query: the rules inside only apply when the screen
+   is 600px wide or less (most phones).
+   ========================================================== */
+@media (max-width: 600px) {
+  .container { padding: 24px 20px 48px; }
+  .hero { padding: 48px 0 40px; }
+  .intro { font-size: 19px; }
+  .footer-email { font-size: 24px; }
+}
