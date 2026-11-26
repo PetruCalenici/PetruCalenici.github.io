@@ -222,7 +222,7 @@ h1, h2, h3 {
 
 .footer-email {
   font-family: var(--heading-font);
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--ink);
   text-decoration: none;
@@ -245,7 +245,7 @@ h1, h2, h3 {
   .container { padding: 24px 20px 48px; }
   .hero { padding: 48px 0 40px; }
   .intro { font-size: 19px; }
-  .footer-email { font-size: 18px; }
+  .footer-email { font-size: 14px; }
 }
 
 /* ==========================================================
