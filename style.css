@@ -84,7 +84,7 @@ h1, h2, h3 {
    ========================================================== */
 .hero {
   padding: 80px 0 64px;
-  border-bottom: 1px solid var(--ink);
+  /* border-bottom: 1px solid var(--ink); */
 }
 
 .hero-top {
