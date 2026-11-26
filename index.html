@@ -2,27 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Makes the page scale properly on phones -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name</title>
+  <title>Petru [Surname] – Economics</title>
+  <!-- The short text Google shows under your link in search results -->
+  <meta name="description" content="Petru [Surname], PhD student in Economics at University College Dublin, working in gender economics, the economics of education and labour economics.">
+
+  <!-- Fonts from Google Fonts: Space Grotesk for headings, Inter for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Your own styles. Every page links to this same file. -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <img src="photo.jpg" alt="Photo of Your Name">
-    <h1>Your Name</h1>
-    <p>PhD student in Economics, University College Dublin</p>
-    <p><a href="mailto:you@ucd.ie">Email</a> · <a href="cv.pdf">CV</a></p>
-  </header>
+  <div class="container">
 
-  <main>
-    <section id="research">
-      <h2>Research</h2>
-      <article>
-        <h3>Paper title</h3>
-        <p>with Co-author Name</p>
-        <p>Two-sentence summary.</p>
+    <!-- NAVIGATION: copy this block onto every page.
+         Move aria-current="page" to the link of the page you are on. -->
+    <nav class="site-nav" aria-label="Main">
+      <a class="site-name" href="index.html">P. [Surname]</a>
+      <div class="nav-links">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="research.html">Research</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="cv.pdf">CV</a>
+      </div>
+    </nav>
+
+    <!-- HERO: name, photo and one-line intro -->
+    <header class="hero">
+      <div class="hero-top">
+        <div class="hero-text">
+          <p class="eyebrow">PhD student · Economics · University College Dublin</p>
+          <h1 class="name">Petru<br>[Surname]</h1>
+        </div>
+        <!-- Put a file called photo.jpg next to index.html in your repo -->
+        <img class="photo" src="photo.jpg" alt="Photo of Petru [Surname]">
+      </div>
+      <div class="hero-bottom">
+        <p class="intro">I study how gendered environments — classrooms, tests and workplaces — shape outcomes for women and men.</p>
+        <p class="links">
+          <a href="mailto:[you]@ucd.ie">Email</a>
+          <a href="cv.pdf">CV</a>
+          <!-- Replace with the link to your own Scholar profile -->
+          <a href="https://scholar.google.com/">Google Scholar</a>
+        </p>
+      </div>
+    </header>
+
+    <!-- RESEARCH: one <article> per paper.
+         To add a paper, copy a whole <article>…</article> block and change the text. -->
+    <section class="research" id="research">
+      <div class="section-head">
+        <h2>Research</h2>
+        <a href="research.html">All projects →</a>
+      </div>
+
+      <article class="paper">
+        <span class="paper-num">01</span>
+        <div class="paper-body">
+          <h3>Workers' Preferences for Manager Gender</h3>
+          <p>A survey experiment on whether workers prefer to be managed by a man or a woman.</p>
+        </div>
+        <p class="paper-meta">with [Co-authors]<br>Work in progress</p>
+      </article>
+
+      <article class="paper">
+        <span class="paper-num">02</span>
+        <div class="paper-body">
+          <h3>School Gender Composition and Achievement Gaps</h3>
+          <p>How the gender mix of a school affects achievement gaps between boys and girls, using NAMER data from Irish primary schools.</p>
+        </div>
+        <p class="paper-meta">Work in progress</p>
+      </article>
+
+      <article class="paper">
+        <span class="paper-num">03</span>
+        <div class="paper-body">
+          <h3>Gender Stereotypes in Test Question Framing</h3>
+          <p>Whether gender-stereotyped framing of test questions affects how students perform, using item-level TIMSS and PIRLS data.</p>
+        </div>
+        <p class="paper-meta">Early stage</p>
       </article>
     </section>
-  </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <a class="footer-email" href="mailto:[you]@ucd.ie">[you]@ucd.ie</a>
+      <p>School of Economics<br>University College Dublin</p>
+    </footer>
+
+  </div>
 </body>
 </html>
+
