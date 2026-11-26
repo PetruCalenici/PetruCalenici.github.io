@@ -283,3 +283,35 @@ h1, h2, h3 {
   margin-top: 10px;
   font-size: 15px;
 }
+
+/* ==========================================================
+   9. TEACHING
+   ========================================================== */
+/* Teaching: one row per course */
+.section-note {
+  margin: 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.course-list {
+  list-style: none;   /* removes the bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+.course {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;  /* course left, year right */
+  gap: 4px 24px;
+  padding: 14px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.course:last-child { border-bottom: 1px solid var(--rule); }
+
+.course-year {
+  font-size: 15px;
+  color: var(--muted);
+}
